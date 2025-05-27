@@ -11,7 +11,7 @@
 - Pull the latest image and run the container
 ```bash
 sudo docker pull ghcr.io/eliasdehondt/passiveaggressiveapi:latest
-sudo docker run --name passiveaggressiveapi-container -p 80:80 -d ghcr.io/eliasdehondt/passiveaggressiveapi:latest
+sudo docker run --name passiveaggressiveapi-container -p 3000:3000 -d ghcr.io/eliasdehondt/passiveaggressiveapi:latest
 ```
 
 - Check the logs

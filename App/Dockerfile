@@ -3,11 +3,16 @@
 # @see https://eliasdh.com #
 # @since 01/01/2025        #
 ############################
-# Frontend build
-FROM nginx:alpine
+FROM node:alpine
 
-LABEL maintainer "Elias De Hondt"
-LABEL version "1.0"
-LABEL description ""
-LABEL org.opencontainers.image.description ""
+WORKDIR /usr/src/app
 
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "src/app.js"]

@@ -1,0 +1,16 @@
+{
+  "name": "passive-aggressive-api",
+  "version": "1.0.0",
+  "description": "A simple RESTful API that returns passive-aggressive meme responses.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "author": "Elias De Hondt",
+  "license": "MIT",
+  "keywords": [],
+  "type": "commonjs"
+}
