@@ -14,7 +14,7 @@ on:
       - main
 
 jobs:
-   build-push-frontend:
+  build-push-frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
