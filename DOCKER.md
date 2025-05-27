@@ -14,6 +14,12 @@ sudo docker pull ghcr.io/eliasdehondt/passiveaggressiveapi:latest
 sudo docker run --name passiveaggressiveapi-container -p 3000:3000 -d ghcr.io/eliasdehondt/passiveaggressiveapi:latest
 ```
 
+- Test the API
+```bash
+curl -X GET http://localhost:3000/api/v1/yes
+curl -X GET http://localhost:3000/api/v1/no
+```
+
 - Check the logs
 ```bash
 sudo docker logs passiveaggressiveapi-container

@@ -14,7 +14,7 @@ const PORT = 3000;
 app.use(express.json());
 
 // Routes
-app.use('/api/memes', memeRoutes);
+app.use('/api/v1', memeRoutes);
 
 // Start the server
 app.listen(PORT, () => {
