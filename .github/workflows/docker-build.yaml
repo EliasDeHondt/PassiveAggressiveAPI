@@ -1,0 +1,39 @@
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/01/2025        #
+############################
+name: Build and Push Docker Image to GHCR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+   build-push-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js (voor Angular)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+            cd ./App
+            npm install
+      - name: Build Angular Application
+        run: |
+          cd ./App
+            npm run build
+      - name: Login to GHCR
+        run: |
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u eliasdehondt --password-stdin
+      - name: Build/Push Frontend Docker Image
+        run: |
+          docker build --push -t ghcr.io/eliasdehondt/passiveaggressiveapi:latest ./App
