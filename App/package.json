@@ -1,5 +1,5 @@
 {
-  "name": "passive-aggressive-api",
+  "name": "passiveaggressiveapi",
   "version": "1.0.0",
   "description": "A simple RESTful API that returns passive-aggressive meme responses.",
   "main": "src/app.js",
